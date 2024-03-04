@@ -4,6 +4,10 @@
 
 using namespace std;
 
+//This function takes a binary string as input and converts it into a decimal string representation. 
+//It iterates through each character of the binary string from right to left, calculating the 
+//decimal value by adding the corresponding powers of 2 based on the position of '1' digits in 
+//the binary string, which is then returned as a string. 
 string binaryToDecimal(string binary) {
     int decimal = 0;
     int base = 1;
@@ -15,7 +19,10 @@ string binaryToDecimal(string binary) {
     }
     return to_string(decimal);
 }
-
+//This function accepts a decimal string as input and converts it into a binary string representation.
+//It converts the decimal string to an integer and performs repeated division by 2, appending 
+//the remainders as characters to form the binary string representation. If the input is '0', 
+//it returns "0" as the binary representation.
 string decimalToBinary(string decimal) {
     if (decimal == "0") return "0";
     int num = stoi(decimal);
@@ -27,6 +34,10 @@ string decimalToBinary(string decimal) {
     return binary;
 }
 
+//This function takes a hexadecimal string as input and converts it into a decimal string representation.
+//It processes each character of the hexadecimal string from right to left, calculating the decimal 
+//value by adding the corresponding values of digits ('0'-'9') or letters ('a'-'f') multiplied 
+//by powers of 16. The resulting decimal value is returned as a string.
 string hexadecimalToDecimal(string hexadecimal) {
     int decimal = 0;
     int base = 1;
@@ -41,6 +52,10 @@ string hexadecimalToDecimal(string hexadecimal) {
     return to_string(decimal);
 }
 
+//This function receives a decimal string as input and converts it into a hexadecimal 
+//string representation. It converts the decimal string to an integer and repeatedly 
+//divides it by 16, appending the remainder as characters to form the hexadecimal string 
+//representation. If the input is '0', it returns "0" as the hexadecimal representation.
 string decimalToHexadecimal(string decimal) {
     if (decimal == "0") return "0";
     int num = stoi(decimal);
