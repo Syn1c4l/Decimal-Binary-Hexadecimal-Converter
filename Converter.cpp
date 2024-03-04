@@ -44,8 +44,8 @@ string hexadecimalToDecimal(string hexadecimal) {
     for (int i = hexadecimal.length() - 1; i >= 0; i--) {
         if (hexadecimal[i] >= '0' && hexadecimal[i] <= '9') {
             decimal += (hexadecimal[i] - '0') * base;
-        } else if (hexadecimal[i] >= 'a' && hexadecimal[i] <= 'f') {
-            decimal += (hexadecimal[i] - 'a' + 10) * base;
+        } else if (hexadecimal[i] >= 'A' && hexadecimal[i] <= 'F') {
+            decimal += (hexadecimal[i] - 'A' + 10) * base;
         }
         base *= 16;
     }
@@ -65,7 +65,7 @@ string decimalToHexadecimal(string decimal) {
         if (remainder < 10) {
             hexadecimal = char(remainder + '0') + hexadecimal;
         } else {
-            hexadecimal = char(remainder - 10 + 'a') + hexadecimal;
+            hexadecimal = char(remainder - 10 + 'A') + hexadecimal;
         }
         num /= 16;
     }
@@ -85,7 +85,7 @@ int main() {
     string inputType;
 
     // Take user input
-    cout << "Enter the input type (bin, dec, or hex): ";
+    cout << "Enter the input type (bin, dec, or hex(omit the 0x at the beginning)): ";
     cin >> inputType;
     cout << "Enter the number: ";
     cin >> userInput;
