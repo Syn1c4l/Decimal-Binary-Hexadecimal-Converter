@@ -4,7 +4,7 @@
 
 using namespace std;
 
-string binaryToDecimal(const string& binary) {
+string binaryToDecimal(string binary) {
     int decimal = 0;
     int base = 1;
     for (int i = binary.length() - 1; i >= 0; i--) {
@@ -16,7 +16,7 @@ string binaryToDecimal(const string& binary) {
     return to_string(decimal);
 }
 
-string decimalToBinary(const string& decimal) {
+string decimalToBinary(string decimal) {
     if (decimal == "0") return "0";
     int num = stoi(decimal);
     string binary = "";
@@ -27,7 +27,7 @@ string decimalToBinary(const string& decimal) {
     return binary;
 }
 
-string hexadecimalToDecimal(const string& hexadecimal) {
+string hexadecimalToDecimal(string hexadecimal) {
     int decimal = 0;
     int base = 1;
     for (int i = hexadecimal.length() - 1; i >= 0; i--) {
@@ -41,7 +41,7 @@ string hexadecimalToDecimal(const string& hexadecimal) {
     return to_string(decimal);
 }
 
-string decimalToHexadecimal(const string& decimal) {
+string decimalToHexadecimal(string decimal) {
     if (decimal == "0") return "0";
     int num = stoi(decimal);
     string hexadecimal = "";
@@ -57,11 +57,11 @@ string decimalToHexadecimal(const string& decimal) {
     return hexadecimal;
 }
 
-string hexadecimalToBinary(const string& hexadecimal) {
+string hexadecimalToBinary(string hexadecimal) {
     return decimalToBinary(hexadecimalToDecimal(hexadecimal));
 }
 
-string binaryToHexadecimal(const string& binary) {
+string binaryToHexadecimal(string binary) {
     return decimalToHexadecimal(binaryToDecimal(binary));
 }
 
