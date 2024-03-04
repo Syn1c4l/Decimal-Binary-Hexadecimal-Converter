@@ -69,7 +69,7 @@ string decimalToHexadecimal(string decimal) {
         }
         num /= 16;
     }
-    return hexadecimal;
+    return hexadecimal.insert(0, "0x");
 }
 
 string hexadecimalToBinary(string hexadecimal) {
@@ -77,7 +77,9 @@ string hexadecimalToBinary(string hexadecimal) {
 }
 
 string binaryToHexadecimal(string binary) {
-    return decimalToHexadecimal(binaryToDecimal(binary));
+    string temp = decimalToHexadecimal(binaryToDecimal(binary));
+    temp.insert(0, "0x");
+    return temp;
 }
 
 int main() {
@@ -85,10 +87,17 @@ int main() {
     string inputType;
 
     // Take user input
-    cout << "Enter the input type (bin, dec, or hex(omit the 0x at the beginning)): ";
+    cout << "Enter the input type (bin, dec, or hex): ";
     cin >> inputType;
-    cout << "Enter the number: ";
-    cin >> userInput;
+
+    if (inputType == "hex") {
+        cout << "Enter the number: 0x";
+        cin >> userInput;
+    } else {
+        cout << "Enter the number: ";
+        cin >> userInput;
+    }
+    
 
     // Determine the input type and perform conversions accordingly
     if (inputType == "bin") {
